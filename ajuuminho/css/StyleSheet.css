@@ -1,0 +1,698 @@
+﻿@font-face 
+{
+    font-family: Helvetica;
+    src: url('##/fonts/Helvetica#otf');
+}
+
+*
+{ 
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
+body
+{ 
+  margin: auto;
+  background: #F5F5F5;
+}
+
+#IndexBox {
+   margin-left: auto;
+   margin-right: auto;
+   height: 585px;
+   width: 1250px;
+   transform:translateY(5%);
+   height:666px;
+}
+
+#ImgBox {
+   margin-left: auto;
+   margin-right: auto;
+   background-image: url("../imagens/index.png");
+   width: 1150px;
+   border-left: none;
+   border-right: none;
+   height:585px;
+   border: 2px solid #4e4e4e;
+   border-left:none;
+   border-right:none;
+}
+
+#LoginBox {
+   margin: auto;
+   width: 300px;
+   background: #E9E9E9;
+   height: 165px;
+   position: relative;
+   top:68%;
+   transform:translateY(-50%);
+   opacity: 0.775;
+   border: 2px solid #4e4e4e;
+   border-left: none;
+   border-right: none;
+   padding: 15px;
+}
+
+#LoginBox-UserName, #LoginBox-Password, #LoginBox-Button {
+   text-align:center;
+}
+
+.InputUserName, .InputPassword {
+  height: 25px;
+  font-size: 12px;
+  border: 1px solid #CCC;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #660000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px;
+  color: #660000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h4 {
+  font-size: 13px;
+  color: #660000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+hr {
+   height:1px;
+   background-color:darkgray;
+}
+
+.hr-align, .hr-alignMore, .hr-alignLess {
+   margin: auto;
+   margin-top: 5px;
+   height:15px;
+   width: 330px;
+}
+
+.hr-alignMore {
+    width:430px;
+    margin-bottom: 5px;
+}
+
+.hr-alignLess {
+    width:260px;
+}
+
+table {
+    font-size: 13px;
+}
+
+#LoginBox-Button {
+    width: 125px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.AutenticateButton {
+  width: 125px;
+  border: 1px solid #696969;
+  font-size: 10px;
+  font-weight:500;
+  color: #d7d7d7;
+  background-color: #660000;
+  height: 25px;
+  text-transform: uppercase;
+  padding-bottom:2px; /*centrar as letras no botão*/
+  cursor: pointer;
+} 
+
+.AutenticateButton:hover {
+  color:#FFF;
+}
+
+.AutenticateButton:active {
+  background-color: #696969;
+}
+
+#FooterBox
+{
+  margin: auto;
+  width: 1250px;
+  height: 25px; 
+}
+
+#FooterBox1
+{ 
+  margin-left: auto;
+  margin-right: auto;
+  width: 1245px;
+  height: 25px;
+  text-align: center; 
+  background: #CCC;
+  border-top: 2px solid #4e4e4e;
+  padding-top: 6px;
+ }
+
+#FooterBox2
+{ 
+  float:left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1245px;
+  height: 25px;
+  text-align: center; 
+  background: #CCC;
+  border-top: 2px solid #4e4e4e;
+  padding-top: 6px;
+  margin-top: 41px;
+ }
+
+#HearderBox {
+    margin: auto;
+    width: 1250px;
+}
+
+#LogoBox {
+    background-image: url("../imagens/logo.png");
+    width: 256px;
+    height:120px;
+    float:left;
+    margin-top: 4px;
+}
+
+#SearchBox {
+  margin: auto;
+  width: 994px;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+}
+
+#SearchBar {
+   height: 34px;
+   width: 920px;
+   float: left;
+   margin-left: 20px;
+}
+
+#SearchButton {
+   height: 37px;
+   width: 37px;
+   float: right;
+}
+
+.SearchBar-Item {
+  height: 34px;
+  font-size: 12px;
+  border: 1px solid #CCC;
+  width: 920px;
+  padding-left: 7px;
+}
+
+.SearchButton-Item {
+   background-image: url(../imagens/search.png); 
+   height: 35px;
+   width: 35px;
+   border: 0px solid transparent;
+   border-radius:3px;
+}
+
+#MenuBox {  
+    margin: auto; 
+    width: 994px;
+    height: 75px;
+    float:left;
+
+}
+
+#HeaderButtonsBox {
+    float: left;
+    margin-left: 18px;
+}
+
+.HeaderButtonsBox-Item {
+    width: 100px;
+    height: 55px;
+    margin-left:10px;
+    white-space:normal;
+    font-size:10px;
+    border: 1px solid #696969;
+    font-weight:700;
+    color: #d7d7d7;
+    background-color: #660000;
+    text-transform: uppercase;
+  /*padding-bottom:1.5px; centrar as letras no botão*/
+  /*padding-left:15px;
+  padding-right:15px;*/
+  cursor: pointer;
+  border-radius:4px;
+}
+
+.HeaderButtonsBox-Item:hover {
+  color:#FFF;
+}
+
+.HeaderButtonsBox-Item:active {
+  background-color: #696969;
+}
+
+#StatusBox {
+    float: right;
+}
+
+#StatusBox2 {
+    background-color:lightgray;
+    float: left;
+    cursor:pointer;
+    height: 30px;
+    padding-left:5px;
+    padding-right:5px;
+    border: 1px solid lightgray;
+    border-radius:3px;
+}
+
+#StatusBox3 {
+    background-color:lightgray;
+    margin-left: 5px;
+    float: left;
+    cursor:pointer;
+    width: 30px;
+    height: 30px;
+        border: 1px solid lightgray;
+        border-radius:3px;
+}
+
+#StatusBox2:hover, #StatusButton:hover  {
+    background-color:darkgray;
+}
+
+#StatusIcon {
+    float:left;
+    margin-right: 5px;
+    padding-top: 4px;
+}
+
+#StatusText {
+    float: left;
+    padding-top: 6px;
+}
+
+#StatusButton {
+    margin: auto;
+    padding-top: 2.4px;
+    padding-left: 2.4px;
+}
+
+.ButtonSairItem {
+    background-image:url(../imagens/close_session.png);
+    border: none;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    cursor:pointer;
+    background-color:transparent;
+    margin-left: 0.005pc;
+}
+
+.StatusIconItem {
+    height:22px;
+    width:22px;
+}
+
+#SiteMapPathBox {
+    height: 35px;
+    margin:auto;
+    width:1250px;
+    float:right;
+}
+
+#BigBox {  
+    margin: auto;
+    width: 1245px;
+    min-height: 465px;
+}
+
+#ProcessesHomeBox {
+    width:415px;
+    min-height: 230px;
+    float: left;
+}
+
+#CalendarHomeBox {
+    float: left;
+    width:415px;
+    min-height: 230px;
+}
+
+#EventsHomeBox {
+    width:415px;
+    min-height: 230px;
+    float: left;
+}
+
+#OnlineUsersHomeBox {
+    margin-top: 30px;
+    width:415px;
+    min-height: 200px;
+    float: left;
+}
+
+#DayDetailHomeBox {
+    width:415px;
+    min-height: 200px;
+    float: left;
+    margin-top: 30px;
+}
+
+#LastAccessesHomeBox {
+    width:415px;
+    min-height: 200px;
+    float: left;
+    margin-top: 30px;
+}
+
+.AlignBox {
+    margin: auto;
+    text-align: center;
+}
+
+.Processes-Item {
+    width:70%;
+    height:100%;
+}
+
+.Calendar-Item {
+    margin:auto;
+    width:80%;
+    height:100%;
+}
+
+.Events-Item {
+    width:50%;
+    height:100%;
+}
+
+.OnlineUsers-Item {
+    width:30%;
+    height:100%;
+}
+
+
+.DayDetail-Item {
+    margin: auto;
+    width:80%;
+    height:100%;
+}
+
+.DayDetail-Item tr th, .DayDetail-Item tr td, .LastAccesses-Item tr th, .LastAccesses-Item tr td {
+  background: #3B3B3B;
+  color: #FFF;
+  padding: 7px 4px;
+  border: 1px solid #CCC;
+}
+
+.DayDetail-Item tr td, .LastAccesses-Item tr td { 
+  background: #FFF;
+  color: #47433F;
+}
+
+.LastAccesses-Item {
+    margin: auto;
+    width:80%;
+    height:100%;
+}
+
+/*MULTI-VIEW*/
+        .Initial
+        {
+            display: block;
+            padding: 4px 18px 4px 18px;
+            float: left;
+            background: url("../imagens/InitialImage.png") no-repeat right top;
+            color: Black;
+            font-weight: bold;
+        }
+        .Initial:hover
+        {
+            color: White;
+            background: url("../imagens/SelectedButton.png") no-repeat right top;
+            cursor: pointer;
+        }
+        .Clicked
+        {
+            float: left;
+            display: block;
+            background: url("../imagens/SelectedButton.png") no-repeat right top;
+            padding: 4px 18px 4px 18px;
+            color: Black;
+            font-weight: bold;
+            color: White;
+            cursor: pointer;
+        }
+/*----------------------------------------------*/
+
+#ProcessosBox {
+  margin: auto;
+  width: 1000px;
+  min-height: 330px;
+}
+
+#EntidadesBox {
+    margin: auto;
+    width: 1000px;
+    min-height: 595px;
+}
+
+.ListBoxEntidades-Item {
+    width:40%;
+    height:100px;
+}
+
+#TipoEntidadeDrpdownBox {
+    margin-top: 10px;
+}
+
+#ListEdentidades {
+    float: left;
+    width: 50%;
+}
+
+#AtributosBox {
+    margin: auto;
+    width: 50%;
+    min-height: 280px;
+    float: left;
+}
+
+#IdentidadesBox {
+  float: left;
+  width: 50%;
+  min-height: 435px;
+}
+
+#ListBoxIdentidades {
+    float: left;
+    width: 32%;
+    text-align: right;
+}
+
+#AtributosBoxIdentidades {
+    float: left;
+    width:55%;
+}
+
+.ListBoxProcessos-Item {
+    width:100%;
+    height:100px;
+}
+
+.ListBoxIdentidades-Item {
+    width:40%;
+    height:100px;
+}
+
+#MultiViewBox {
+  margin: auto;
+  width: 1200px;
+}
+
+#MultiViewButtonsBox {
+    margin: auto;
+    width: 754px;
+    height: 23px;
+}
+
+.ViewsBox {
+    margin: auto;
+    width: 1100px;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    min-height: 220px;
+    background-color: #ddc659;
+}
+
+.LabelsInputs-Item, .LabelsInputs2-Item {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.ContentTable {
+    margin: auto;
+    margin-bottom:10px;
+}
+
+.Labels-Item {
+    float:right;
+    margin-bottom:5px;
+}
+
+#RolesBox {
+    float: left;
+    width:50%;
+    min-height: 435px;
+}
+
+#PerfisListBox1 {
+    margin: auto;
+    width: 93%;
+    min-height: 150px;
+}
+
+#PerfisListBox2 {
+    margin: auto;
+    width: 45%;
+    min-height: 100px;
+}
+
+#PerfisListBox3, #PerfisListBox4 {
+    float: left;
+    width: 270px;
+    height: 80px;
+}
+.PerfisListBox-Item {
+    text-align: center;
+    width: 270px;
+    height: 80px;
+}
+
+.PerfisList-Item {
+    width: 60%;
+    min-height: 80px;
+}
+
+#PerfisButtonsBox {
+    float: left;
+    width: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 45px;
+}
+
+.MoreButton, .LessButton, .AdicionarPerfilButton {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    border: 1px solid #696969;
+    font-weight:800;
+    color: #d7d7d7;
+    background-color: #660000;
+    cursor: pointer;
+    padding-bottom:5px;
+    border-radius: 5px;
+}
+
+.AdicionarPerfilButton {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    margin-top: 0px;
+    font-weight:800;
+    padding-bottom:21px;
+    border-radius: 4px;
+}
+
+#AdicionarPerfilBox {
+    margin: auto;
+    text-align:center;
+}
+
+#ContentButtonsBox {
+    margin:auto;
+    width:375px;
+    text-align:center;
+}
+
+.ContentButton {
+  border: 1px solid #696969;
+  font-size: 10px;
+  font-weight:500;
+  color: #d7d7d7;
+  background-color: #660000;
+  height: 25px;
+  text-transform: uppercase;
+  padding-bottom:1.5px; /*centrar as letras no botão*/
+  padding-left:15px;
+  padding-right:15px;
+  cursor: pointer;
+}
+
+.ContentButton:hover, .MoreButton:hover, .LessButton:hover, .AdicionarPerfilButton:hover {
+  color:#FFF;
+}
+
+.ContentButton:active, .MoreButton:active, .LessButton:active, ..AdicionarPerfilButton:active {
+  background-color: #696969;
+}
+
+.Calendar-Item tr th, .Calendar-Item tr td { 
+  padding: 2px 1px;
+  border: 1px solid #CCC;
+}
+
+.Calendar-Item tr td { 
+  background: #FFF;
+  color: #47433F;
+}
+
+#table1 {
+  display: inline-block;
+  text-align: center;
+}
+
+#table1 tr th, #table1 tr td { 
+  background: #3B3B3B;
+  color: #FFF;
+  padding: 7px 4px;
+  border: 1px solid #CCC;
+}
+
+#table1 tr td { 
+  background: #FFF;
+  color: #47433F;
+}
+
+.InsideViewsBox {
+    margin: auto;
+    width: 70%;
+    min-height: 200px;
+}
+
+.InsideViewsTableBox {
+    float: left;
+    width: 50%;
+    text-align: center;
+    min-height: 200px;
+}
+
+.InsideViewsDetailsBox {
+    float: left;
+    width: 50%;
+    min-height: 200px;
+}
