@@ -142,6 +142,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\WebFormsIdentity.mdf" />
     <Content Include="controls\anexos.ascx" />
     <Content Include="controls\bens.ascx" />
     <Content Include="controls\contabilidade.ascx" />
@@ -336,9 +337,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
