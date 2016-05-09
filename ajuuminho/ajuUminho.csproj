@@ -143,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\WebFormsIdentity.mdf" />
+    <Content Include="App_Data\WebFormsIdentity_log.ldf">
+      <DependentUpon>WebFormsIdentity.mdf</DependentUpon>
+    </Content>
     <Content Include="controls\anexos.ascx" />
     <Content Include="controls\bens.ascx" />
     <Content Include="controls\contabilidade.ascx" />
