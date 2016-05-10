@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
-{// coisas novas
+{// coisas novas v2
     public abstract class DBcon
     {
         public SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
