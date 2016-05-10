@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public abstract class DBcon //DBcona
+    public abstract class DBcon //DBcona cona cona sdsd 
     {
         public SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         public SqlCommand cmd = new SqlCommand();
