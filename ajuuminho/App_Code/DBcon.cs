@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public abstract class DBcon //DBcona cona cona sdsd  aaaa
+    public abstract class DBcon //DBcona O JOEL É PANELEIRO
     {
         public SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         public SqlCommand cmd = new SqlCommand();
