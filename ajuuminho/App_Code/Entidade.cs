@@ -6,7 +6,7 @@ namespace ajuUminho.App_Code
 {
     public abstract class Entidade : DBcon
     {
-
+        protected string aaa;
         protected string nome;
         protected string morada;
         protected string codPostal;
