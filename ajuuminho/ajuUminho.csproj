@@ -167,6 +167,8 @@
     <Content Include="fonts\Helvetica.otf" />
     <Compile Include="App_Code\DBcon.cs" />
     <Compile Include="App_Code\Entidade.cs" />
+    <Content Include="App_Code\RepresentanteLegal.cs" />
+    <Content Include="App_Code\RepresentanteLegalDTO.cs" />
     <Compile Include="controls\anexos.ascx.cs">
       <DependentUpon>anexos.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

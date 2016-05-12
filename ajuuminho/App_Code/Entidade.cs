@@ -4,21 +4,20 @@ using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
 {//teste
-    public class Entidade : DBcon
+    public abstract class Entidade : DBcon
     {
 
-        private string nome;
-        private string morada;
-        private string codPostal;
-        private string localidade;
-        private string email;
-        private string telefone;
-        private string telemovel;
-        private string fax;
-        private string cc;
-        private string iban;
-        private string nif;
-        private string lastChangeBy;
+        protected string nome;
+        protected string morada;
+        protected string codPostal;
+        protected string localidade;
+        protected string email;
+        protected string telefone;
+        protected string telemovel;
+        protected string fax;
+        protected string iban;
+        protected string nif;
+        protected string lastChangeBy;
 
         public string Nome
         {
@@ -150,19 +149,6 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public string Cc
-        {
-            get
-            {
-                return cc;
-            }
-
-            set
-            {
-                cc = value;
-            }
-        }
-
         public string Telemovel
         {
             get
@@ -181,7 +167,7 @@ namespace ajuUminho.App_Code
 
         }
 
-        public Entidade(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+       /* public Entidade(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             this.nome = nome;
             this.morada = morada;
@@ -315,7 +301,7 @@ namespace ajuUminho.App_Code
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
-        }
+        } */
 
 
         //================================================================================================//
