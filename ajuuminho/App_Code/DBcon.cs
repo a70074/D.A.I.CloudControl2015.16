@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public abstract class DBcon //DBcona O JOEL É PANELEIRO
+    public abstract class DBcon // teste no desktop de casa do oscar xD
     {
         //asda
 
