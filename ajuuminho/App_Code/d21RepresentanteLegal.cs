@@ -106,7 +106,5 @@ namespace ajuUminho.App_Code
             rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[1]["lastChangeBy"]));
             return rldto;
         }
-
-
     }
 }

@@ -186,10 +186,10 @@
     <Content Include="imagens\SelectedButton.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\Helvetica.otf" />
-    <Content Include="App_Code\d21RepresentanteLegal.cs" />
+    <Compile Include="App_Code\d21RepresentanteLegal.cs" />
     <Compile Include="App_Code\DBcon.cs" />
     <Compile Include="App_Code\Entidade.cs" />
-    <Content Include="App_Code\RepresentanteLegalDTO.cs" />
+    <Compile Include="App_Code\RepresentanteLegalDTO.cs" />
     <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.cs">
       <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -475,6 +475,10 @@
     <Compile Include="webforms\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ws\c23EditarRepresentanteLegal.asmx.cs">
+      <DependentUpon>c23EditarRepresentanteLegal.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\ControloDeEntidades.asmx.cs">
       <DependentUpon>ControloDeEntidades.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -493,6 +497,7 @@
     <Content Include="webforms\InterfaceProcesso.aspx" />
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\login.aspx" />
+    <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
     <None Include="Web.Debug.config">

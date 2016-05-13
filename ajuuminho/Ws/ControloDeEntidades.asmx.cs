@@ -23,7 +23,6 @@ namespace ajuUminho.Ws
             Entidade ent = new Entidade();
             Entidade ents = ent.getEntidade(id, tipoEntidade, ent);
             IList<string> lista = new List<string>();
-
             lista.Add(ents.Nome);
             lista.Add(ents.Morada);
             lista.Add(ents.CodPostal);
