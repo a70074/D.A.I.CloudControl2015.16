@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using ajuUminho.App_Code;
+using System.Data;
 
 namespace ajuUminho.Ws
 {
@@ -23,5 +24,13 @@ namespace ajuUminho.Ws
             // efetuar controlos
             rldto.SetRepresentanteLegal(rldto);
         }
+
+        public DataTable listarRepresentantesLegais()
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentantesLegais();
+            return dt;
+        }
+
     }
 }
