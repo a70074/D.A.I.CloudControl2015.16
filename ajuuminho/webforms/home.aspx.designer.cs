@@ -12,7 +12,6 @@ namespace ajuUminho.webforms {
     
     public partial class home {
         
-#pragma warning disable CS0108 // 'home.Form' hides inherited member 'Page.Form'. Use the new keyword if hiding was intended.
         /// <summary>
         /// Form control.
         /// </summary>
@@ -21,7 +20,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm Form;
-#pragma warning restore CS0108 // 'home.Form' hides inherited member 'Page.Form'. Use the new keyword if hiding was intended.
         
         /// <summary>
         /// header control.
@@ -30,7 +28,7 @@ namespace ajuUminho.webforms {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ajuUminho.controls.header header;
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao header;
         
         /// <summary>
         /// ProcessesListID control.
