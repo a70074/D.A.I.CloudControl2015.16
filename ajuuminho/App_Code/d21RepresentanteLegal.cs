@@ -106,5 +106,16 @@ namespace ajuUminho.App_Code
             rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[1]["lastChangeBy"]));
             return rldto;
         }
+
+        public void removeRepresentanteLegal (string id)
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "DELETE FROM dbo.representantelegal WHERE id = '" + id + "'";
+            cmd.CommandType = CommandType.Text;
+            reader = cmd.ExecuteReader();
+            con.Close();
+        }
     }
 }

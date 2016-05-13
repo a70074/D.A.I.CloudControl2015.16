@@ -32,5 +32,12 @@ namespace ajuUminho.Ws
             return dt;
         }
 
+        public void removerRepresentanteLegal(string id)
+        {
+            // efetuar controlos
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            rl.removeRepresentanteLegal(id);
+        }
+
     }
 }
