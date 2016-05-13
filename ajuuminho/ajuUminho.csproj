@@ -387,13 +387,6 @@
     <Compile Include="webforms\i56AtribuicaoEntidades.aspx.designer.cs">
       <DependentUpon>i56AtribuicaoEntidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webforms\i60Eventos.aspx.cs">
-      <DependentUpon>i60Eventos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webforms\i60Eventos.aspx.designer.cs">
-      <DependentUpon>i60Eventos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="webforms\i64Bens.aspx.cs">
       <DependentUpon>i64Bens.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -514,7 +507,6 @@
     <Content Include="webforms\i50PrestadoresServico.aspx" />
     <Content Include="webforms\i54OutrasEntidades.aspx" />
     <Content Include="webforms\i56AtribuicaoEntidades.aspx" />
-    <Content Include="webforms\i60Eventos.aspx" />
     <Content Include="webforms\i64Bens.aspx" />
     <Content Include="webforms\i68MovimentosFinanceiros.aspx" />
     <Content Include="webforms\i72Credores.aspx" />
