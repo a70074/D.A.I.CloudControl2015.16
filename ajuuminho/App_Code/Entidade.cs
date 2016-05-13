@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
 {
-    public class Entidade : DBcon
+    public abstract class Entidade : DBcon
     {
         protected string nome;
         protected string morada;
@@ -14,7 +14,6 @@ namespace ajuUminho.App_Code
         protected string telefone;
         protected string telemovel;
         protected string fax;
-        protected string cc;
         protected string iban;
         protected string nif;
         protected string lastChangeBy;
@@ -110,7 +109,7 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public string Cc
+        /*public string Cc
         {
             get
             {
@@ -121,7 +120,7 @@ namespace ajuUminho.App_Code
             {
                 cc = value;
             }
-        }
+        }*/
 
         public string Iban
         {
@@ -180,7 +179,7 @@ namespace ajuUminho.App_Code
 
         }
 
-       public Entidade(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+      /* public Entidade(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             this.nome = nome;
             this.morada = morada;
@@ -315,7 +314,7 @@ namespace ajuUminho.App_Code
             cmd.ExecuteNonQuery();
             con.Close();
         } 
-
+        */
 
         //================================================================================================//
 

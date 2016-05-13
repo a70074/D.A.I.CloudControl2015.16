@@ -4,7 +4,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class RepresentanteLegalDTO : RepresentanteLegal
+    public class RepresentanteLegalDTO : d21RepresentanteLegal
     {
 
         public RepresentanteLegalDTO()

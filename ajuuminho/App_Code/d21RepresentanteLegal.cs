@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class RepresentanteLegal : Entidade
+    public class d21RepresentanteLegal : Entidade
     {
 
         protected string cc;
@@ -24,23 +24,23 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public RepresentanteLegal() { }
+        public d21RepresentanteLegal() { }
 
-        public RepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
-         {
-             this.nome = nome;
-             this.morada = morada;
-             this.codPostal = codPostal;
-             this.localidade = localidade;
-             this.email = email;
-             this.telefone = telefone;
-             this.telemovel = telemovel;
-             this.fax = fax;
-             this.cc = cc;
-             this.iban = iban;
-             this.nif = nif;
-             this.lastChangeBy = lastChangeBy;
-         } 
+        public d21RepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
 
 
         public DataTable getListaRepresentantesLegais()
@@ -80,7 +80,7 @@ namespace ajuUminho.App_Code
             con.Close();
         }
 
-        public RepresentanteLegalDTO getRepresentanteLegal (string id)
+        public RepresentanteLegalDTO getRepresentanteLegal(string id)
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
             SqlDataReader reader;
@@ -93,21 +93,20 @@ namespace ajuUminho.App_Code
             dataTable.Load(reader);
             con.Close();
             rldto.Nome = Convert.ToString(dataTable.Rows[1]["nome"]);
-            rldto.morada = (Convert.ToString(dataTable.Rows[1]["morada"]));
-            rldto.codPostal = (Convert.ToString(dataTable.Rows[1]["codPostal"]));
-            rldto.localidade = (Convert.ToString(dataTable.Rows[1]["localidade"]));
-            rldto.email = (Convert.ToString(dataTable.Rows[1]["email"]));
-            rldto.telefone = (Convert.ToString(dataTable.Rows[1]["telefone"]));
-            rldto.telemovel = (Convert.ToString(dataTable.Rows[1]["telemovel"]));
-            rldto.fax = (Convert.ToString(dataTable.Rows[1]["fax"]));
-            rldto.cc = (Convert.ToString(dataTable.Rows[1]["cc"]));
-            rldto.iban = (Convert.ToString(dataTable.Rows[1]["iban"]));
-            rldto.nif = (Convert.ToString(dataTable.Rows[1]["nif"]));
-            rldto.lastChangeBy = (Convert.ToString(dataTable.Rows[1]["lastChangeBy"]));
+            rldto.Morada = (Convert.ToString(dataTable.Rows[1]["morada"]));
+            rldto.CodPostal = (Convert.ToString(dataTable.Rows[1]["codPostal"]));
+            rldto.Localidade = (Convert.ToString(dataTable.Rows[1]["localidade"]));
+            rldto.Email = (Convert.ToString(dataTable.Rows[1]["email"]));
+            rldto.Telefone = (Convert.ToString(dataTable.Rows[1]["telefone"]));
+            rldto.Telemovel = (Convert.ToString(dataTable.Rows[1]["telemovel"]));
+            rldto.Fax = (Convert.ToString(dataTable.Rows[1]["fax"]));
+            rldto.Cc = (Convert.ToString(dataTable.Rows[1]["cc"]));
+            rldto.Iban = (Convert.ToString(dataTable.Rows[1]["iban"]));
+            rldto.Nif = (Convert.ToString(dataTable.Rows[1]["nif"]));
+            rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[1]["lastChangeBy"]));
             return rldto;
         }
 
 
     }
-    
 }
