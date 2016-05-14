@@ -109,13 +109,70 @@ namespace ajuUminho.App_Code
 
         public void removeRepresentanteLegal (string id)
         {
-            SqlDataReader reader;
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "DELETE FROM dbo.representantelegal WHERE id = '" + id + "'";
+            cmd.CommandText = "DELETE FROM dbo.representantelegal WHERE id = @id";
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public string getID(string cc)
+        {
+
+            SqlDataReader reader;
+            con.Open();
+            cmd.Parameters.AddWithValue("@cc", cc);
+            cmd.CommandText = "SELECT id FROM dbo.representantelegal WHERE cc = @cc";
+            cmd.CommandType = CommandType.Text;
+            string id = cmd.ExecuteNonQuery().ToString();
+            /*reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);*/
+            con.Close();
+            //Dictionary<String, String> idcc = new Dictionary<String, String>();
+            //idcc.Add(Convert.ToString(dt.Rows[1]["id"]), Convert.ToString(dt.Rows[1]["cc"]));
+            
+            return id;
+
+        }
+
+        public bool ccUnique (string cc, string id)
+        {
+            SqlDataReader reader;
+            SqlDataReader reader2;
+            DataTable dt = new DataTable();
+            con.Open();
+            cmd.Parameters.AddWithValue("@cc", cc);
+            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc";
             cmd.CommandType = CommandType.Text;
             reader = cmd.ExecuteReader();
-            con.Close();
+            dt.Load(reader);
+            if (dt.Rows.Count == 1)
+            {
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc AND id = @id";
+                cmd.CommandType = CommandType.Text;
+                reader2 = cmd.ExecuteReader();
+                dt.Load(reader2);
+                if (dt.Rows.Count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (dt.Rows.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

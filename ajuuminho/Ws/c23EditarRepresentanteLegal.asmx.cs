@@ -22,7 +22,12 @@ namespace ajuUminho.Ws
         public void editarRepresentanteLegal(RepresentanteLegalDTO rldto)
         {
             // efetuar controlos
-            rldto.SetRepresentanteLegal(rldto);
+            var id = rldto.getID(rldto.Cc);
+            if (rldto.ccUnique(rldto.Cc, id) == true)
+            {
+                rldto.SetRepresentanteLegal(rldto);
+            }
+            
         }
 
         public DataTable listarRepresentantesLegais()
