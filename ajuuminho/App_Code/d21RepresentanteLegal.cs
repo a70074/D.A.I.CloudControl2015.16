@@ -53,7 +53,7 @@ namespace ajuUminho.App_Code
         public DataTable getListaRepresentantesLegais()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT * FROM [dbo].[representantelegal];";
+            cmd.CommandText = "SELECT id, nome FROM [dbo].[representantelegal];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
