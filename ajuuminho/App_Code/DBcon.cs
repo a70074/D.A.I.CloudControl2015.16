@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
 {
-    public abstract class DBcon // teste no desktop de casa do oscar xD
+    public class DBcon // teste no desktop de casa do oscar xD
     {
         //asda
 

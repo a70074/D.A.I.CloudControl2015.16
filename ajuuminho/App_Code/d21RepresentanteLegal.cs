@@ -28,18 +28,25 @@ namespace ajuUminho.App_Code
 
         public d21RepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            this.nome = nome;
-            this.morada = morada;
-            this.codPostal = codPostal;
-            this.localidade = localidade;
-            this.email = email;
-            this.telefone = telefone;
-            this.telemovel = telemovel;
-            this.fax = fax;
-            this.cc = cc;
-            this.iban = iban;
-            this.nif = nif;
-            this.lastChangeBy = lastChangeBy;
+            con.Open();
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@morada", morada);
+            cmd.Parameters.AddWithValue("@codPostal", codPostal);
+            cmd.Parameters.AddWithValue("@localidade", localidade);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@telemovel", telemovel);
+            cmd.Parameters.AddWithValue("@fax", fax);
+            cmd.Parameters.AddWithValue("@cc", cc);
+            cmd.Parameters.AddWithValue("@iban", iban);
+            cmd.Parameters.AddWithValue("@nif", nif);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.representantelegal VALUES (@nome, @morada, @codPostal, @localidade, @email, @telefone, @telemovel, @fax, @cc, @iban, @nif, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+
         }
 
 
@@ -58,7 +65,7 @@ namespace ajuUminho.App_Code
         }
 
 
-        public void SetRepresentanteLegal(RepresentanteLegalDTO rldto)
+        public void SetRepresentanteLegal(RepresentanteLegalDTO rldto, string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", rldto.nome);
@@ -73,7 +80,7 @@ namespace ajuUminho.App_Code
             cmd.Parameters.AddWithValue("@iban", rldto.iban);
             cmd.Parameters.AddWithValue("@nif", rldto.nif);
             cmd.Parameters.AddWithValue("@lastChangeBy", rldto.lastChangeBy);
-            cmd.CommandText = "INSERT dbo.representantelegal VALUES (@nome, @morada, @codPostal, @localidade, @email, @telefone, @telemovel, @fax, @cc, @iban, @nif, @lastChangeBy);";
+            cmd.CommandText = "UPDATE dbo.representantelegal SET nome = @nome, morada = @morada, codPostal = @codPostal, localidade = @localidade, email = @email, telefone = @telefone, telemovel = @telemovel, fax = @fax, cc = @cc, iban = @iban, nif = @nif WHERE );";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -119,19 +126,14 @@ namespace ajuUminho.App_Code
 
         public string getID(string cc)
         {
-
-            SqlDataReader reader;
             con.Open();
             cmd.Parameters.AddWithValue("@cc", cc);
             cmd.CommandText = "SELECT id FROM dbo.representantelegal WHERE cc = @cc";
             cmd.CommandType = CommandType.Text;
             string id = cmd.ExecuteNonQuery().ToString();
-            /*reader = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(reader);*/
+            
             con.Close();
-            //Dictionary<String, String> idcc = new Dictionary<String, String>();
-            //idcc.Add(Convert.ToString(dt.Rows[1]["id"]), Convert.ToString(dt.Rows[1]["cc"]));
+            
             
             return id;
 

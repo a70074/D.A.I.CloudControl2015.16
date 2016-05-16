@@ -481,7 +481,6 @@
     </Compile>
     <Compile Include="Ws\ControloDeEntidades.asmx.cs">
       <DependentUpon>ControloDeEntidades.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\gestaoIdentidade.asmx.cs">
       <DependentUpon>gestaoIdentidade.asmx</DependentUpon>

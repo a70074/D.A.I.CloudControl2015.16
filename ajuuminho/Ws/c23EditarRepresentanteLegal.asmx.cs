@@ -25,9 +25,16 @@ namespace ajuUminho.Ws
             var id = rldto.getID(rldto.Cc);
             if (rldto.ccUnique(rldto.Cc, id) == true)
             {
-                rldto.SetRepresentanteLegal(rldto);
+                rldto.SetRepresentanteLegal(rldto, id);
             }
             
+        }
+
+        public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+
         }
 
         public DataTable listarRepresentantesLegais()
