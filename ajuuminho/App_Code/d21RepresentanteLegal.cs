@@ -91,10 +91,12 @@ namespace ajuUminho.App_Code
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
             SqlDataReader reader;
+            var id2 = Convert.ToInt32(id);
             con.Open();
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = '" + id + "'";
+            cmd.Parameters.AddWithValue("@id", id2);
+            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
             reader = cmd.ExecuteReader();
             var dataTable = new DataTable();
             dataTable.Load(reader);

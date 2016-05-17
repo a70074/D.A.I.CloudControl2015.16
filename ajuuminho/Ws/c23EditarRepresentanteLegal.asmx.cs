@@ -50,6 +50,14 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
+        public RepresentanteLegalDTO getRepresentanteLegal(string id)
+        {
+            RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
+            rldto = rldto.getRepresentanteLegal(id);
+            return rldto;
+        }
+
+        [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();

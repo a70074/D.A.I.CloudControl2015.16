@@ -14,8 +14,8 @@ namespace ajuUminho.controls.entidades
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.Items.Add(new ListItem("Escolher Representante Legal", ""));
-            ListBoxEntidadesID.AppendDataBoundItems = true;
+            //ListBoxEntidadesID.Items.Add(new ListItem("Escolher Representante Legal", ""));
+            //ListBoxEntidadesID.AppendDataBoundItems = true;
             c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
             DataTable dt = ws.listarRepresentantesLegais();
             ListBoxEntidadesID.DataSource = dt;
@@ -34,37 +34,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.Items.Add(new ListItem("Escolher Representante Legal", ""));
-            ListBoxEntidadesID.AppendDataBoundItems = true;
             c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
-            DataTable dt = ws.listarRepresentantesLegais();
-            ListBoxEntidadesID.DataSource = dt;
-            ListBoxEntidadesID.DataTextField = "nome";
-            ListBoxEntidadesID.DataValueField = "id";
-            ListBoxEntidadesID.DataBind();
-            /* c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
-             DataTable dt = ws.listarRepresentantesLegais();
-             //SqlDataAdapter sda = new SqlDataAdapter();
-             //sda.Fill(dt);
-             ListBoxEntidadesID.DataSource = dt;
-             ListBoxEntidadesID
-            c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
-            var lista = ws.getListaRepresentantesLegais();
-                        ListBoxEntidadesID.DataSource = lista;
-            foreach (KeyValuePair<String, String> pair in lista)
-                 {
-                      ListItem Item = new ListItem();
-                      Item.Text = pair.Value.ToString();
-                      Item.Value = pair.Key.ToString();
-                      ListBoxEntidadesID.Items.Add(Item);
-                      ListBoxEntidadesID.DataBind();
-                 }*/
-
+            var getRL = ListBoxEntidadesID.DataValueField;
+            var rl = ws.getRepresentanteLegal(getRL);
+            TextBoxNomeID.Text = rl.Nome;
+            TextBoxMoradaID.Text = rl.Morada;
+            TextBoxCodPostalID.Text = rl.CodPostal;
+            TextBoxLocalidadeID.Text = rl.Localidade;
+            TextBoxEmailID.Text = rl.Email;
+            TextBoxTelefoneID.Text = rl.Telefone;
+            TextBoxTelemovelID.Text = rl.Telemovel;
+            TextBoxFaxID.Text = rl.Fax;
+            TextBoxCcID.Text = rl.Cc;
+            TextBoxIbanID.Text = rl.Iban;
         }
 
-        protected void ListBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
+        
     }
 }
