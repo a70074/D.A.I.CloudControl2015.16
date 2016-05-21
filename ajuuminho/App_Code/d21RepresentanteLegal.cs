@@ -7,7 +7,7 @@ using System.Web;
 namespace ajuUminho.App_Code
 {
     public class d21RepresentanteLegal : Entidade
-    {
+    {//sss
 
         protected string cc;
 
