@@ -36,7 +36,8 @@ namespace ajuUminho.Ws
         public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
 
         }
 
