@@ -7,14 +7,14 @@ using System;
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for ControloDeEntidades
+ /*   /// Summary description for ControloDeEntidades
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class ControloDeEntidades : System.Web.Services.WebService
+   /* public class ControloDeEntidades : System.Web.Services.WebService
     {
 
         [WebMethod]
@@ -23,7 +23,6 @@ namespace ajuUminho.Ws
             Entidade ent = new Entidade();
             Entidade ents = ent.getEntidade(id, tipoEntidade, ent);
             IList<string> lista = new List<string>();
-
             lista.Add(ents.Nome);
             lista.Add(ents.Morada);
             lista.Add(ents.CodPostal);
@@ -106,5 +105,5 @@ namespace ajuUminho.Ws
         //    dataGrid1.DataSource = view;
         //}
 
-    }
+    }*/
 }
