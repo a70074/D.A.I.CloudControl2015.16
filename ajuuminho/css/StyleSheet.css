@@ -520,12 +520,12 @@ table {
 
 #MultiViewBox {
   margin: auto;
-  width: 1200px;
+  width: 1225px;
 }
 
 #MultiViewButtonsBox {
     margin: auto;
-    width: 754px;
+    min-width:50%;
     height: 23px;
 }
 
