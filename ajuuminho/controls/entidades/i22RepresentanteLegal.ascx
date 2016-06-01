@@ -4,7 +4,7 @@
         <div class="InsideViewsTableBox">
                 <div class="AlignBox">
                     <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [nome] FROM [representanteLegal]"></asp:SqlDataSource>
+                    <!--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [nome] FROM [representanteLegal]"></asp:SqlDataSource>-->
                 </div>
         </div>
 
@@ -75,8 +75,8 @@
           </div>
 
         <div id="ContentButtonsBox">
-            <asp:Button ID="ButtonCriarID" runat="server" Text="Inserir"  CssClass="ContentButton" OnClick="ButtonCriarID_Click"/>
-            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  CssClass="ContentButton"/>
+            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar"  CssClass="ContentButton" OnClick="ButtonCriarID_Click"/>
+            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  CssClass="ContentButton" OnClick="ButtonEditarID_Click"/>
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar"  CssClass="ContentButton"/>
         </div>
 

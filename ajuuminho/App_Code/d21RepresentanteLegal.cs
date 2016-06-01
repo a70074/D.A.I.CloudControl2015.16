@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -54,7 +55,7 @@ namespace ajuUminho.App_Code
         public DataTable getListaRepresentantesLegais()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[representantelegal];";
+            cmd.CommandText = "SELECT cc, nome FROM [dbo].[representantelegal];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -62,40 +63,53 @@ namespace ajuUminho.App_Code
             DataTable dataTable = new DataTable();
             dataTable.Load(reader);
             con.Close();
+            /*Dictionary<string, string> d = new Dictionary<string, string>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                string key = dr["id"].ToString();
+                string value = dr["nome"].ToString();
+                if (!d.ContainsKey(key))
+                {
+                    d.Add(key, value);
+                }
+            }*/
             return dataTable;
         }
 
 
-        public void SetRepresentanteLegal(RepresentanteLegalDTO rldto, string id)
+        public void SetRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)
         {
             con.Open();
-            cmd.Parameters.AddWithValue("@nome", rldto.nome);
-            cmd.Parameters.AddWithValue("@morada", rldto.morada);
-            cmd.Parameters.AddWithValue("@codPostal", rldto.codPostal);
-            cmd.Parameters.AddWithValue("@localidade", rldto.localidade);
-            cmd.Parameters.AddWithValue("@email", rldto.email);
-            cmd.Parameters.AddWithValue("@telefone", rldto.telefone);
-            cmd.Parameters.AddWithValue("@telemovel", rldto.telemovel);
-            cmd.Parameters.AddWithValue("@fax", rldto.fax);
-            cmd.Parameters.AddWithValue("@cc", rldto.cc);
-            cmd.Parameters.AddWithValue("@iban", rldto.iban);
-            cmd.Parameters.AddWithValue("@nif", rldto.nif);
-            cmd.Parameters.AddWithValue("@lastChangeBy", rldto.lastChangeBy);
-            cmd.CommandText = "UPDATE dbo.representantelegal SET nome = @nome, morada = @morada, codPostal = @codPostal, localidade = @localidade, email = @email, telefone = @telefone, telemovel = @telemovel, fax = @fax, cc = @cc, iban = @iban, nif = @nif WHERE );";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@morada", morada);
+            cmd.Parameters.AddWithValue("@codPostal", codPostal);
+            cmd.Parameters.AddWithValue("@localidade", localidade);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@telemovel", telemovel);
+            cmd.Parameters.AddWithValue("@fax", fax);
+            cmd.Parameters.AddWithValue("@cc", cc);
+            cmd.Parameters.AddWithValue("@iban", iban);
+            cmd.Parameters.AddWithValue("@nif", nif);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.representantelegal SET nome = @nome, morada = @morada, codPostal = @codPostal, localidade = @localidade, email = @email, telefone = @telefone, telemovel = @telemovel, fax = @fax, cc = @cc, iban = @iban, nif = @nif WHERE id = @id );";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public RepresentanteLegalDTO getRepresentanteLegal(string id)
+        public RepresentanteLegalDTO getRepresentanteLegal(string cc)
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
             SqlDataReader reader;
-            var id2 = Convert.ToInt32(id);
+            
             con.Open();
-            cmd.Parameters.AddWithValue("@id", id2);
-            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = @id";
+            cmd.Parameters.AddWithValue("@cc", cc);
+            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();

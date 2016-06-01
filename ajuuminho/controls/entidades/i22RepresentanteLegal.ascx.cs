@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,6 +8,7 @@ using ajuUminho.Ws;
 using ajuUminho.App_Code;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace ajuUminho.controls.entidades
 {
@@ -21,8 +22,14 @@ namespace ajuUminho.controls.entidades
             DataTable dt = ws.listarRepresentantesLegais();
             ListBoxEntidadesID.DataSource = dt;
             ListBoxEntidadesID.DataTextField = "nome";
-            ListBoxEntidadesID.DataValueField = "id";
+            ListBoxEntidadesID.DataValueField = "cc";
             ListBoxEntidadesID.DataBind();
+            dt.AsEnumerable().Select(
+                row => dt.Columns.Cast<DataColumn>().ToDictionary(
+                    column => column.ColumnName,
+                    column => row[column] as string)
+                    );
+            
         }
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
@@ -59,6 +66,12 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = rl.Iban;
         }
 
-        
+        protected void ButtonEditarID_Click(object sender, EventArgs e)
+        {
+            c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
+            ws.editarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+                TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
+                TextBoxNifID.Text, TextBoxLastChangedID.Text);
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Services;
 using ajuUminho.App_Code;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace ajuUminho.Ws
 {
@@ -21,13 +22,15 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarRepresentanteLegal(RepresentanteLegalDTO rldto)
+        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             // efetuar controlos
-            var id = rldto.getID(rldto.Cc);
-            if (rldto.ccUnique(rldto.Cc, id) == true)
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            var id = rl.getID(cc);
+            if (rl.ccUnique(cc, id) == true)
             {
-                rldto.SetRepresentanteLegal(rldto, id);
+                rl.SetRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
             }
             
         }
@@ -47,14 +50,13 @@ namespace ajuUminho.Ws
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
             DataTable dt = rl.getListaRepresentantesLegais();
             return dt;
-          
         }
 
         [WebMethod]
-        public RepresentanteLegalDTO getRepresentanteLegal(string id)
+        public RepresentanteLegalDTO getRepresentanteLegal(string cc)
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
-            rldto = rldto.getRepresentanteLegal(id);
+            rldto = rldto.getRepresentanteLegal(cc);
             return rldto;
         }
 
