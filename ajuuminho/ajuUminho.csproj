@@ -188,8 +188,8 @@
     <Content Include="fonts\Helvetica.otf" />
     <Compile Include="App_Code\DBcon.cs" />
     <Compile Include="App_Code\Entidade.cs" />
-    <Content Include="App_Code\RepresentanteLegal.cs" />
-    <Content Include="App_Code\RepresentanteLegalDTO.cs" />
+    <Compile Include="App_Code\RepresentanteLegal.cs" />
+    <Compile Include="App_Code\RepresentanteLegalDTO.cs" />
     <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.cs">
       <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
